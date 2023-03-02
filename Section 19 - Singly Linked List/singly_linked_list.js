@@ -106,7 +106,7 @@ class SinglyLinkedList {
         this.length++;
         return true;
     }
-    
+
 
     remove(index) {
         if (index < 0 || index >= this.length) { return null; }
@@ -122,26 +122,26 @@ class SinglyLinkedList {
         this.length--;
         return nodeToBeRemoved;
     }
-    
+
     reverse() {
-    	let currentNode = this.head;
-      this.head = this.tail;
-      this.tail = currentNode;
-      var next;
-      var previousNode = null;
-    	for(let i = 0; i < this.length; i++) {
-      	next = currentNode.next;
-        currentNode.next = previousNode;
-        previousNode = currentNode;
-        currentNode = next;
-      }
-      return this;
+        let currentNode = this.head;
+        let previousNode = null;
+        let node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+        for (let i = 0; i < this.length; i++) {
+            let next = currentNode.next;
+            currentNode.next = previousNode;
+            previousNode = currentNode;
+            currentNode = next;
+        }
+        return this;
     }
-    
-    print(){
+
+    print() {
         var arr = [];
         var current = this.head
-        while(current){
+        while (current) {
             arr.push(current.val)
             current = current.next
         }
