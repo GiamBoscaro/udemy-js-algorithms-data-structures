@@ -76,7 +76,7 @@ class SinglyLinkedList {
     }
 
     get(index) {
-        if (index < 0 || index > this.length) { return null; }
+        if (index < 0 || index >= this.length) { return null; }
         let i = 0;
         let node = this.head;
         while (i < index) {
@@ -94,7 +94,7 @@ class SinglyLinkedList {
     }
 
     insert(index, value) {
-        if (index < 0 || index > this.length) { return false; }
+        if (index < 0 || index >= this.length) { return false; }
         if (index === 0) { this.unshift(value); }
         else if (index === this.length) { this.push(value); }
         else {
@@ -109,7 +109,7 @@ class SinglyLinkedList {
 
 
     remove(index) {
-        if (index < 0 || index >= this.length) { return null; }
+        if (index < 0 || index >= this.length) { return undefined; }
         if (index === 0) {
             const nodeToBeRemoved = this.head;
             this.head = this.head.next;
