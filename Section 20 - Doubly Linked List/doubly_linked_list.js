@@ -76,7 +76,7 @@ class DoublyLinkedList {
 
     get(index) {
         if (index < 0 || index >= this.length) { return null; }
-        if (index < this.length/2) {
+        if (index < this.length / 2) {
             let i = 0;
             let node = this.head;
             while (i < index) {
@@ -85,7 +85,7 @@ class DoublyLinkedList {
             }
             return node;
         } else {
-            let i = this.length -1;
+            let i = this.length - 1;
             let node = this.tail;
             while (i > index) {
                 node = node.prev;
@@ -120,7 +120,7 @@ class DoublyLinkedList {
     remove(index) {
         if (index < 0 || index >= this.length) { return undefined; }
         if (index === 0) { return this.shift(); }
-        if (index === this.length -1) { return this.pop(); }
+        if (index === this.length - 1) { return this.pop(); }
         const previousNode = this.get(index - 1);
         const nodeToBeRemoved = previousNode.next;
         previousNode.next = nodeToBeRemoved.next;
