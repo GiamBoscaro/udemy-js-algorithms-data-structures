@@ -1,6 +1,6 @@
 /**
  * Implement a solution to construct the
- * Fibonacci sequence with dynamic programming
+ * Fibonacci sequence with memoization
  */
 
 function fibonacci(n) {
